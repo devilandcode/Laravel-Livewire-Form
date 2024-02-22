@@ -9,12 +9,8 @@ use Symfony\Component\Yaml\Yaml;
 
 class EloquentUserRepository implements UserRepositoryInterface
 {
-    public function store(string $name, string $lastName, string $dob): User
+    public function store(array $validated): User
     {
-        return $user = User::query()->create([
-            'name' =>  $name,
-            'last_name' => $lastName,
-            'dob' => $dob
-        ]);
+        return User::query()->create($validated);
     }
 }

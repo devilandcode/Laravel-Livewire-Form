@@ -15,16 +15,15 @@ class StoreFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'max:15'],
-            'lastName' => ['required', 'max:15'],
-            'midName' => ['max:15'],
+            'name' => ['required', 'max:12'],
+            'last_name' => ['required', 'max:12'],
+            'mid_name' => ['max:15'],
             'dob' => ['required'],
             'email' => ['required_without_all:phone'],
             'phone' => ['required_without_all:email'],
             'phoneCode' => ['required_without_all:email'],
-            'docs.*' => ['mimes:png,jpg,pdf', 'max:5096'],
-            'docs' => ['array', 'max:5'],
-            'yourself' => ['max:1000'],
+            'about' => ['max:1000'],
+            'status' => ['required'],
         ];
     }
 
@@ -32,19 +31,16 @@ class StoreFormRequest extends FormRequest
     {
         return [
             'name.required' => 'Поле обязательно для заполнения',
-            'name.max' => 'Поле должно быть не длиннее 15 символов',
-            'lastName.required' => 'Поле обязательно для заполнения',
-            'lastName.max' => 'Поле должно быть не длиннее 15 символов',
-            'midName.max' => 'Поле должно быть не длиннее 15 символов',
+            'name.max' => 'Поле должно быть не длиннее 12 символов',
+            'last_name.required' => 'Поле обязательно для заполнения',
+            'last_name.max' => 'Поле должно быть не длиннее 12 символов',
+            'mid_name.max' => 'Поле должно быть не длиннее 15 символов',
             'dob.required' => 'Поле обязательно для заполнения',
             'email.required_without_all' => 'Почта или телефон должны быть указаны',
             'phone.required_without_all' => 'Телефон или почта должны быть указаны',
             'phoneCode.required_without_all' => 'Телефон или почта должны быть указаны',
-            'yourself' => 'Поле должно быть не длиннее 1000 символов',
-            'docs' => 'Размер файла не более 5Мб',
-            'docs.*' => 'Допустимые форматы: png, jpg, pdf',
-            'docs.max' => 'Не более 5 файлов',
-
+            'about' => 'Поле должно быть не длиннее 1000 символов',
+            'status' => 'Поле обязательно для заполнения'
         ];
     }
 }

@@ -6,5 +6,5 @@ use App\Models\User;
 
 interface UserRepositoryInterface
 {
-    public function store(string $name, string $lastName, string $dob): User;
+    public function store(array $validated): User;
 }
