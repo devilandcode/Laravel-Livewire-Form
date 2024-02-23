@@ -15,7 +15,9 @@ return new class extends Migration
         Schema::create('phones', function (Blueprint $table) {
             $table->integer('code');
             $table->integer('number');
+
             $table->primary(['code', 'number']);
+
             $table->timestamps();
 
             $table->foreignIdFor(User::class)

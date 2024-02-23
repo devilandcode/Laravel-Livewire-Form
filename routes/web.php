@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Profile\Form;
+use App\Http\Livewire\Form;
 use Illuminate\Support\Facades\Route;
 
 /*

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Profile;
+namespace App\Http\Livewire;
 
 use App\Contracts\User\UserRepositoryInterface;
 use App\Http\Requests\StoreFormRequest;
@@ -8,8 +8,8 @@ use App\Models\File;
 use App\Models\Phone;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
-use Livewire\Component;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class Form extends Component
