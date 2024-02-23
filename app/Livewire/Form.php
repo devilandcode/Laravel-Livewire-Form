@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Livewire;
 
 use App\Contracts\User\UserRepositoryInterface;
 use App\Http\Requests\StoreFormRequest;
@@ -27,7 +27,7 @@ class Form extends Component
     public $i;
     public $about;
     public $status;
-    public $submited = false;
+    public $submitted = false;
 
     #[Validate('mimes:jpg,png,pdf|max:5096')]
     public $docs = [];
@@ -61,7 +61,7 @@ class Form extends Component
                     );
                 }
             });
-            $this->submited = true;
+            $this->submitted = true;
 
         } catch(\Exception $e) {
             session()->flash('error', $e->getMessage());
@@ -100,7 +100,7 @@ class Form extends Component
     {
         foreach ($docs as $doc) {
 
-            $filePath = $doc->store('files');
+            $filePath = $doc->store('images');
             $file = new File();
             $file->path = $filePath;
 
