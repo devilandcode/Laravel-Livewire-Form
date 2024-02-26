@@ -4,7 +4,7 @@
 1) composer install
 2) npm i
 3) php artisan storage:link
-4) Create .env from env.example
+4) Create .env and env.testing from env.example 
 5) php artisan key:generate
 
 ## Make migrations
